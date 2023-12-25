@@ -1,0 +1,42 @@
+$cell-height: 20px;
+$cell-width: 20px;
+$cell-margin: 2px;
+
+.timeline {
+  .timeline-months {
+    display: flex;
+    flex-direction: row;
+    .month {
+      text-align: center;
+      font-size: 10px;
+    }
+  }
+  .timeline-body {
+    display: flex;
+    .timeline-weeks {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .weeks {
+        display: inherit;
+        align-items: center;
+        height: $cell-height;
+        margin: $cell-margin;
+        text-align: center;
+      }
+    }
+
+    .timeline-cell-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      .timeline-cell {
+        width: $cell-width;
+        height: $cell-height;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin: $cell-margin;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
