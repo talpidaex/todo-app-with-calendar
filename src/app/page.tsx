@@ -1,8 +1,12 @@
-import Timeline from "./modules/timeline";
+import { relative } from "path";
+import Timeline from "./modules/timeline/timeline";
 
 export default function Home() {
 
   return (
-    <Timeline />
+    <>
+      <Timeline />
+      <div id="modal"></div>
+    </>
   )
 }

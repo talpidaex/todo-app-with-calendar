@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 
 export default function Timeline() {
 
+    //TODO : 1 yıl eklenecek! (2024-2025) .add(1, 'year')
     const startDate = dayjs().startOf('year')
     const endDate = dayjs().endOf('year')
 

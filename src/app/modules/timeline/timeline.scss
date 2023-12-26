@@ -3,7 +3,7 @@ $cell-width: 20px;
 $cell-margin: 2px;
 
 .timeline {
-  .timeline-months {
+  &-months {
     display: flex;
     flex-direction: row;
     .month {
@@ -27,7 +27,7 @@ $cell-margin: 2px;
       visibility: hidden;
     }
   }
-  .timeline-body {
+  &-body {
     display: flex;
     .timeline-weeks {
       display: inline-flex;

@@ -1,4 +1,4 @@
-import { DAYS } from "../enums/timeline";
+import { DAYS } from "../../enums/timeline";
 
 export default function Weeks({ index }: { index: number }) {
     return (
