@@ -9,6 +9,22 @@ $cell-margin: 2px;
     .month {
       text-align: center;
       font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+    .Jan ~ .Jan,
+    .Feb ~ .Feb,
+    .Mar ~ .Mar,
+    .Apr ~ .Apr,
+    .May ~ .May,
+    .Jun ~ .Jun,
+    .Jul ~ .Jul,
+    .Aug ~ .Aug,
+    .Sep ~ .Sep,
+    .Oct ~ .Oct,
+    .Nov ~ .Nov,
+    .Dec ~ .Dec {
+      visibility: hidden;
     }
   }
   .timeline-body {
@@ -23,6 +39,7 @@ $cell-margin: 2px;
         height: $cell-height;
         margin: $cell-margin;
         text-align: center;
+        margin-right: 30px;
       }
     }
 
@@ -31,6 +48,12 @@ $cell-margin: 2px;
       flex-direction: column;
       flex-wrap: wrap;
       .timeline-cell {
+        &.today {
+          border-color: orange;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: $cell-width;
         height: $cell-height;
         border: 1px solid rgba(0, 0, 0, 0.1);
