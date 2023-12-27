@@ -23,13 +23,7 @@ export default function Modal({ setIsOpen, children }: ModalProps) {
             <div className="modal-container" >
                 <div className="centered">
                     <div className="modal">
-                        <div className="modal-header">
-                            {children}
-                        </div>
-                        <div className="modal-footer">
-                            <button onClick={() => setIsOpen(false)}>Uygula</button>
-                            <button onClick={handleSubmit}>Close</button>
-                        </div>
+                        {children}
                     </div>
                 </div>
             </div>,
