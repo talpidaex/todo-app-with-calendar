@@ -1,26 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type InitialState = {
-  username: string;
-  uid: string;
-  date: string;
+type Task = {
+  taskName: string;
+  taskStatus: "completed" | "incomplete";
 };
 
-const initialState = {
-  username: "",
-  uid: "",
-  date: "",
-} as InitialState;
+type SchedulesType = {
+  [day: string]: {
+    tasks: Task[];
+  };
+};
+
+const schedules: SchedulesType[] = [];
 
 export const taskSlice = createSlice({
   name: "taskSlice",
-  initialState,
+  initialState: {
+    schedules,
+  },
   reducers: {
     dummyAction: (state, action: PayloadAction<string>) => {
       console.log("dummy action");
     },
+    setTaskToDate: (state, action: PayloadAction<SchedulesType>) => {
+      state.schedules = [...state.schedules, action.payload];
+    },
   },
 });
 
-export const { dummyAction } = taskSlice.actions;
+export const { dummyAction, setTaskToDate } = taskSlice.actions;
 export default taskSlice.reducer;

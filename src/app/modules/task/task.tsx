@@ -1,7 +1,8 @@
 import Checkbox from "@/app/components/Checkbox"
 import { Plus } from "react-bootstrap-icons"
 import "./task.scss"
-import { FormEvent, useState } from "react"
+import { useDispatch } from "react-redux"
+import { setTaskToDate } from "@/redux/features/task-slice"
 
 interface Task {
     day: string
@@ -9,12 +10,20 @@ interface Task {
 
 export default function Task({ day }: Task) {
 
+    const dispatch = useDispatch();
 
     const handleSubmitTask = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const form = event.currentTarget;
         const formData = new FormData(form)
-        /** Dispatch edilecek! */
+        const data = {
+            [day]: {
+                taskName: formData.get('task'),
+                taskStatus: "completed"
+            }
+        }
+        dispatch(setTaskToDate(data))
+
     }
 
     return (
